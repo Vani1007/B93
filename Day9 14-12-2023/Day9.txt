@@ -1,0 +1,62 @@
+xpath----> path of the element in html tree
+2 types --> absolute & relative
+we can use attribute text and logical operators in xpath
+   tag[@AN='av' and text()='tv']
+we can have partial match
+  tag[starts-with(@AN,'av') or contains(text(),'tv')]
+
+traversing --> fwd and bkw --> dynamic element - I & D xpath
+global index group index
+//a---->all the links
+//a[1]--> all the links which has index 1
+(//a)[1]--> the 1st link
+(//a)[7]--> 7 th link
+(//a)[last()]--> the last link
+(//a)[last()-1]---> last but one
+(//a)[position() < 5]--1 to 4th
+(//a)[position() mod 2 =0]
+
+xpath axes---> keywords wich helps us to identify elements using the relationship
+/axes::tag
+
+child
+./child::html/child::body/child::a------>./html/body/a-->/html/body/a
+
+descendant
+./descendant::a----------> .//a--->//a
+
+parent 
+//a/parent::body----------------> //a/..
+
+ancestor
+//th[text()='Sl No']/ancestor::body
+
+following-sibling
+//th[text()='Subject']/following-sibling::th
+
+preceding-sibling
+
+//th[text()='Subject']/preceding-sibling::th
+
+//th[text()='Cost']/preceding-sibling::th[2]
+
+8
+tagname id name classname lt plt cssSelector xpath
+
+imp
+1. id
+2. name
+3. lt
+4. xpath
+
+login https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+
+home https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index
+
+Relative locators
+only in selenium 4
+all the methods of Relative locators are overloaded they can take WebElement or By as argument
+
+
+
+
