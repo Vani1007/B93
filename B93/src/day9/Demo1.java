@@ -11,9 +11,9 @@ public class Demo1 {
 		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 		driver.manage().window().maximize();
 		Thread.sleep(2000);
-		driver.findElement(By.name("username")).sendKeys("admin7");
+		driver.findElement(By.name("username")).sendKeys("admin");
 		driver.findElement(By.name("password")).sendKeys("admin123");
-		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		driver.findElement(By.xpath("//button[@type='submit']")).submit();
 		Thread.sleep(7000);
 		
 		String expected="dashboard";

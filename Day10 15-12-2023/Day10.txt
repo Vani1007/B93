@@ -1,0 +1,21 @@
+WebElement interface methods
+Action
+1.sendKeys
+2.click
+3.clear
+4.submit
+
+Verfication
+1.isEnabled
+2.isSelected
+3.isDisplayed
+
+getters
+1.getTagName
+2.getAttribute
+3.getText
+4.getHeight
+5.getWidth
+6.getX
+7.getY
+8.getCssValue 

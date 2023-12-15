@@ -12,10 +12,11 @@
     <fullyQualifiedTypeName name="org.openqa.selenium.Point"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.chrome.ChromeDriverInfo"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.Keys"/>
-    <fullyQualifiedTypeName name="org.openqa.selenium.WebDriver"/>
-    <fullyQualifiedTypeName name="org.openqa.selenium.chrome.ChromeDriver"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.support.locators.RelativeLocator.RelativeBy"/>
-    <fullyQualifiedTypeName name="org.openqa.selenium.By"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.support.locators.RelativeLocator"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.WebElement"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.WebDriver"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.chrome.ChromeDriver"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.By"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.support.Color"/>
 </qualifiedTypeNameHistroy>

@@ -13,8 +13,8 @@ public class Demo2 {
 		Thread.sleep(2000);
 		
 		driver.findElement(By.id("input-username")).sendKeys("Admin");
-		driver.findElement(By.id("input-password")).sendKeys("pointofsale6");
-		driver.findElement(By.name("login-button")).click();
+		driver.findElement(By.id("input-password")).sendKeys("pointofsale");
+		driver.findElement(By.name("login-button")).submit();
 		
 		Thread.sleep(5000);
 		String expected="Powered by OSPOS";
