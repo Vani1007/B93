@@ -1,0 +1,44 @@
+WebElement interface methods
+Action
+1.sendKeys
+2.click
+3.clear
+4.submit
+
+Verfication
+1.isEnabled
+2.isSelected
+3.isDisplayed
+
+getters
+1.getTagName
+2.getAttribute
+3.getText
+4.getHeight
+5.getWidth
+6.getX
+7.getY
+8.getCssValue 
+9.getScreenshotAs----> takes the screenshot of only element
+
+TakesScreenshot --> we can take the screenshot of current visible area of the page
+
+How to scroll down?
+using JavascriptExecutor
+
+how to scroll the page without using JSE?
+using Actions class
+1. it has parameterized constructor
+2. we must call 'perform' method whenever we call any method Actions class
+
+in which package we have Actions class?
+inside interactions package
+
+diff b/w Action & Actions?
+Action--> interface
+Actions--> class
+
+
+
+
+
