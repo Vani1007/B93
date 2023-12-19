@@ -1,0 +1,31 @@
+Actions
+1. it is a class present under interactions package
+2. Action is an interface , Actions is a class
+3. Actions class has parameterized constructor (single arg constructor)
+4. it takes an arg of type WebDriver
+5. when we call any method of Actions class we must call perform() at the end
+
+uses of Actions class
+1. mouse hover (drop down menu)
+2. double click
+3. dragAndDrop
+4. rightclick (contextClick)
+5. scrolling
+
+
+
+Homework:
+1. in globalsqa.com goto Tester’s Hub->Demo Testing Site-->Tooltip
+2. print the color of the 'box' before and after double click
+
+
+Popup
+1. Alert popup
+   a. js popup
+   b. we cant inspect--> we cant use findElement
+   c. displayed --> below the address bar (middle)
+   d. handle--> switchTo().alert()
+   e. options: getText(), accept(), dismiss()
+   f. exception: NoAlertPresentException
+
+
