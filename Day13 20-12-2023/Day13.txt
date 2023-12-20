@@ -1,0 +1,28 @@
+File upload popup
+1. clicking on choose/browse button will display a popup which is used to upload the file
+2. we specify path of the file as arg for sendKeys method of the choose button
+3. In sendKeys method we should specify only absolute path of the file
+4. to use relative path--> we convert it to absolutepath  using getAbsolutePath of File
+
+<input class="Pke_EE" type="text" title="Search for Products, Brands and More" name="q" autocomplete="off" placeholder="Search for Products, Brands and More" value="">
+
+<input autocomplete="off" type="text" class="_18u87m _3WuvDp" value="">
+(//input[@type='text'])[2]
+
+//input[@autocomplete='off' and @type='text']
+
+//input[@type='text' and not(@name='q')]
+
+
+<i class="wewidgeticon we_close"></i>
+
+//i[@class='wewidgeticon we_close']
+
+Frame popup
+  popup can be created using iframe - we handle it using driver.switchTo().frame(arg);
+3 ways to switch -->
+1. int --using index of the frame
+2. String --using id or name of the frame
+3. WebElement--using frame element
+
+if arg is invalid we get NoSuchFrameException
