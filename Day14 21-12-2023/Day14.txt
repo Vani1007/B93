@@ -1,0 +1,77 @@
+Frame-- to create embeded webpage
+how do u know 
+
+<button aria-label="Stay signed out" class="M6CB1c rr4y5c" jsname="ZUkOIc" jslog="71121; track:click;" data-dismiss="n">Stay signed out</button>
+
+//button[text()='Stay signed out']
+
+NoSuchElementException
+1. wrong locator
+2. wrong value 
+3. inside frame
+4. outside the frame
+5. synch issue
+
+<a id="webklipper-publisher-widget-container-notification-close-div" class="close"><i class="wewidgeticon we_close"></i></a>
+
+
+//a[@class='close']
+
+
+what we need
+<iframe title="notification-frame-~197139432" name="notification-frame-~197139432" id="webklipper-publisher-widget-container-notification-frame" frameborder="0" marginheight="0" marginwidth="0" style="display: block; position: fixed; z-index: 16776272; left: -1000px; top: -1000px; visibility: visible; height: 100%; width: 100%; transform: translate(1000px, 1000px);" data-notification-layout-id="~184fc0b7" data-notification-layout-name="modal"></iframe>
+
+
+
+1st
+
+<iframe title="webengage-engagement-callback-frame" name="webengage-engagement-callback-frame" id="webengage-engagement-callback-frame" frameborder="0" marginheight="0" marginwidth="0" style="position: absolute; background-color: transparent; bottom: 0px; right: 0px; border: none; overflow: hidden; visibility: hidden; display: none;"></iframe>
+
+2nd
+<iframe title="_we_wk_data_store" name="_we_wk_data_store" id="_we_wk_data_store" frameborder="0" marginheight="0" marginwidth="0" src="https://311c47d7.webengage.co/storage-frame-1.18.htm?cdn=y&amp;cbf=webengage-engagement-callback-frame&amp;lc=311c47d7" style="position: absolute; background-color: transparent; bottom: 0px; right: 0px; border: none; overflow: hidden; visibility: hidden; display: none;"></iframe>
+
+3rd
+<iframe title="notification-frame-~197139432" name="notification-frame-~197139432" id="webklipper-publisher-widget-container-notification-frame" frameborder="0" marginheight="0" marginwidth="0" style="display: block; position: fixed; z-index: 16776272; left: -1000px; top: -1000px; visibility: visible; height: 100%; width: 100%; transform: translate(1000px, 1000px);" data-notification-layout-id="~184fc0b7" data-notification-layout-name="modal"></iframe>
+
+<iframe style="display: none" (document.getelementbyid('script').textcontent="" ||="" document.getelementbyid('script').innertext)"=""></iframe>
+
+
+
+
+<p data-cy="departureDate" class="blackText font20 code lineHeight36"><span class="font30 latoBlack">22 </span><span>Dec</span><span class="shortYear">23</span></p>
+
+//p[@data-cy='departureDate']
+
+<p>31</p>
+
+
+//p[text()='31']
+
+
+<div>January 2024</div>
+
+//div[text()='January 2024']/../..//p[text()='25']
+
+
+<span tabindex="0" role="button" aria-label="Next Month" class="DayPicker-NavButton DayPicker-NavButton--next"></span>
+
+//span[@aria-label='Next Month']
+
+Child browser popup
+child window popup
+
+--------> min & max button
+
+getWindowHandle returns address of current browser -->String
+getWindowHandles returns address of the browsers--> Set<String>
+
+
+
+
+
+
+
+
+
+
+
