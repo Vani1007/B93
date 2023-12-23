@@ -11,6 +11,7 @@ NoSuchElementException
 3. inside frame
 4. outside the frame
 5. synch issue
+6. diff browser
 
 <a id="webklipper-publisher-widget-container-notification-close-div" class="close"><i class="wewidgeticon we_close"></i></a>
 
@@ -64,6 +65,9 @@ child window popup
 
 getWindowHandle returns address of current browser -->String
 getWindowHandles returns address of the browsers--> Set<String>
+
+close-->closes the current browser
+quit--> closes all the browser --> terminates the session
 
 
 

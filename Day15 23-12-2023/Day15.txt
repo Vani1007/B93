@@ -1,0 +1,16 @@
+<button class="btn btn-ohrm btn-free-demo">Contact Sales</button>
+
+<button class="btn btn-ohrm btn-free-demo">Contact Sales</button>
+
+Popups
+1.Alert
+2. Notification
+3. HTML popup(Hidden div )
+4. file upload
+5. file download(no popup-auto download)
+6. child browser (tab)
+
+findElement    				&   	findElements
+return type: WebElement				List<WebElement>
+locator is duplicate:returns 1st MWE		returns all MWE
+locator is not matching: throws NSEE		returns empty list
