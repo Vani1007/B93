@@ -1,0 +1,31 @@
+Handling multiple elements
+1. we use findElements
+2. return type- List<WebElement>
+3. used is xpath
+
+Handling listbox
+1. list box also called as combo box or drop down list created using <select>
+2. in selenium we use Select class
+3. Select class constructor takes WebElement as arg
+4. we have 3 methods to select the option
+   a. selectByIndex(arg)
+   b. selectByValue(arg)
+   c. selectByVisibleText(arg)
+5. both value and text is case sensitive
+6. if any of the 3 arg is invalid we get NSEE 
+7. single select listbox & multi select list box
+8. isMultiple()--> true ->Multi Select List Box   false--> Single Select List Box
+9. we have 4 methods to deselect the option
+   a. deselectByIndex(arg)
+   b. deselectByValue(arg)
+   c. deselectByVisibleText(arg)
+   d. deselectAll()
+
+10. getter methods 
+     a. getOptions--> returns all options
+     b. getAllSelectedOptions--> returns only selected options
+     c. getFirstSelectedOption--> return the 1st option which is select /NSEE
+     d. getWrappedElement-->returns all options as single element
+
+11.if we try to use any of the deselect method on SSLB we get UnsupportedOperationException
+
