@@ -1,0 +1,24 @@
+NoSuchElementException
+1. Element is not present
+2. wrong locator
+3. wrong locator value
+4. inside the frame
+5. outside the frame
+6. diff browser
+7. diff tab
+8. synchronization
+
+By default waiting period of findElement/findElements is ZERO
+
+process of matching selenium speed with app is called as
+synchronization
+
+1.implicitlyWait
+	1. used by all findElement and findElemts methods 
+        2. wait upto N seconds
+	3. defailt--> PT0S polling timeout 0 seconds
+        4. after the time out--> we NSEE/empty list
+
+<title>Open Source Point of Sale&nbsp;|&nbsp;OSPOS&nbsp;|&nbsp;Login</title>
+<title>Open Source Point of Sale | Powered by OSPOS 3.3.7</title>
+
