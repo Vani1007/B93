@@ -1,0 +1,66 @@
+Explicit wait--> WebDriverWait is called as explicit
+
+what  is FluentWait?
+it is a parent class of WebDriverWait
+
+use of FluentWait?
+we can customize the explicit wait
+we can change polling period
+we can handle multiple exceptions
+
+diff implict & explicit wait
+
+implicit wait 				 explicit wait
+1. we can handle sync of FE & FEs	1. any method
+2. we specify only 1 (all fes..)	2. mulitple times (can handle only 1 method)
+3. Exception: NSEE/Empty list		3. TimeOutException
+4. we do not specify waiting condition	4. we must specify waiting condition explicitly	using wait.until
+5. implicitlyWait			5. WebDriverWait
+
+Where are the explict wait conditions available?
+in a class called ExpectedConditions-waiting condition is called as predicates 
+(ExpectedCondition- interface)
+
+
+by default how long does driver.get methods waits for page to load?
+5M
+
+can we change it?
+yes
+driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(4));
+
+what are diff sync options available in Selenium?
+1. implicit wait
+2. explicit wait
+3. Fluent  Wait
+4. custom wait
+5. pageload timeout
+6. ScriptTimeout
+7. Thread.sleep
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

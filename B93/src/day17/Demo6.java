@@ -43,9 +43,6 @@ public class Demo6 {
 			System.out.println("Fail:Homepage is NOT displayed");
 		}
 		
-		
-		
-		
-		driver.quit();
+				driver.quit();
 	}
 }
