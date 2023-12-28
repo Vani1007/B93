@@ -1,0 +1,23 @@
+Encapsulation in Selenium?
+binding data member with member function so that it works as a single unit
+
+How to achive it
+ 1. declaration--> private
+ 2. initalization--> constructor
+ 3. utilization--> getter/setter method
+
+when do we get StaleElementReferenceException?
+
+After finding the element
+Before performing the action on that element
+if page is refreshed we get StaleElementReferenceException
+
+what is the meaning of StaleElementReferenceException?
+it means 
+Reference of the Element is Stale
+Address of the element is old/expired
+
+
+How to handle this?
+using Page Object Model
+
