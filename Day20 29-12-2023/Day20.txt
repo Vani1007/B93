@@ -1,0 +1,35 @@
+page object model (POM)
+this is one of the java design pattern used in selenium to handle StaleElementReferanceException
+
+1. we declare the element using @FindBy (FindBy Annotation)
+2. syntax:
+	@FindBy(locator="value")
+        private WebElement elementName;
+3. How to initalize?
+   PageFactory.initElements(WebDriver,POMclassObject);// inside constructor
+
+4. no changes in the method
+
+5. POM class can handle only SERE and not other exceptions like NSEE
+
+6. if we dont use initElements method of PageFactory class what happens?
+   we get NullPointerException
+
+7.how do u handle multiple elements unsing POM? (findElements)
+  in @FindBy use the data type as List<WebElement>
+
+8. POM  class is also called as repository class / element repository 
+
+9. best practice-- 
+  a.dont accept same argument mutiple times in same class- convert such arguments as global variables
+  b.do not write main method in pom class
+  c.all pom class contains parameterized constructor
+  d. number of pom class will be same as number of webpages
+  e. number of test class will be same as number of test case
+
+TestNG is a testing framework inspired by JUnit and NUnit.
+It's designed for Java, and it provides powerful functionalities for writing and managing test codes.
+The "NG" in TestNG stands for "Next Generation." 
+TestNG is popular for its features like annotations, running tests in arbitrarily big thread pools, flexible test configuration, and support for data-driven testing.
+It also supports various types of tests like unit, functional, end-to-end, integration, etc.
+It's widely used in the Java community for automating large test suites and scaling up to support larger projects.
