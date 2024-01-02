@@ -1,0 +1,27 @@
+TestNG-Test Next Generation--> Unit Testing tool (junit)- used by Dev 
+We use it for execution of automation scripts
+
+1. to run multiple script with single click
+2. to generate the report
+
+We use Test Method insteadof main method
+We use Reporter.log insteadof SOP
+
+to run multiple TestNG classes we use TestNG Suite--> xml file
+How to create it?
+1. Right click on req file of package
+2. goto TestNG->Select 'Convert to TestNG'
+3. click finish-> we get testng.xml
+4. right click on xml--> run as 'TestNG Suite'
+
+to run test mulitple times with diff test data-- Data Providers
+
+what are the return type supported by DataProvider?
+1.Object[]--> 1DA of any type
+2.Object[][]--> 2D A of any type
+3.Iterator<Object>--> Iterator of any type
+4.Iterator<Object[]>--> Iterator 1D A of any type
+
+
+
+
