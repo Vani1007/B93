@@ -1,0 +1,91 @@
+TestNG annotations plays a specific role in structuring and managing the lifecycle of tests.
+They help in setting up preconditions, cleaning up after tests, and managing resources effectively.
+Here's an overview of each annotation:
+annotations:
+
+@BeforeSuite
+
+Usage: Applied to a method that should run before any of the tests run in the suite.
+Purpose: Ideal for global setup activities, like setting up system properties, initializing logging frameworks, or other tasks that are common for the entire suite of tests.
+@BeforeTest
+
+Usage: Applied to a method that should run before any test method belonging to the classes inside the <test> tag in the TestNG XML file.
+Purpose: Useful for setting up a state that is common across multiple classes, but within the same <test> tag in the XML.
+@BeforeClass
+
+Usage: Applied to a method that should run once before the first test method in the current class is executed.
+Purpose: Used for more extensive setup tasks that need to run once per class, like initializing complex data structures or opening a database connection.
+@BeforeMethod
+
+Usage: Applied to a method that needs to be executed before each test method in the current class.
+Purpose: Ideal for setting up a common state or initializing variables that are required for each test method.
+@Test
+
+Marks a method as a test method. These methods are what constitute the actual tests. Depending on the number of @Test methods and their configurations, they can run in different orders or in parallel.
+@AfterMethod
+
+Usage: Applied to a method that should be executed after each test method in the class.
+Purpose: Useful for cleaning up or resetting the state after each test method, like closing browser windows or clearing test data.
+@AfterClass
+
+Usage: Applied to a method that should run once after all the test methods in the current class have been executed.
+Purpose: Ideal for cleanup activities that apply to the entire class, such as closing database connections or releasing class-level resources.
+@AfterTest
+
+Usage: Applied to a method that should run after all the test methods belonging to the classes inside the <test> tag have run.
+Purpose: Used for teardown or cleanup activities that are common across multiple classes but confined to a specific <test> tag.
+@AfterSuite
+
+Usage: Applied to a method that should run after all the tests in the suite have been executed.
+Purpose: Useful for global cleanup activities, like shutting down logging frameworks, generating reports, or cleaning up global test data.
+These annotations provide a powerful way to manage the execution flow of tests, ensuring that the necessary setup and teardown activities are performed at the appropriate stages of the test lifecycle. They enable you to write clean, maintainable, and efficient test code.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+In TestNG, the concept of parameters allows for greater flexibility and reusability in tests by enabling you to pass values to test methods from external sources like XML configuration files. 
+This feature is particularly useful for data-driven testing, where you might want to run the same set of tests with different data sets.
+
+How Parameters Work in TestNG:
+Definition: Parameters in TestNG are defined in the TestNG XML suite file using the <parameter> tag.
+Passing Parameters: These parameters are then passed to test methods in your test classes using the @Parameters annotation.
+Defining Parameters in the XML Suite File:
+XML Configuration: You define parameters in the TestNG XML file within the <parameter> tags. Each parameter has a name and a value.
+
+Scope: Parameters can be defined at various levels – suite, test, or test classes – giving you control over their scope and how they apply to your tests.
+
+Example:
+
+<suite name="MySuite">
+  <parameter name="browser" value="Chrome"/>
+  <test name="Test1">
+    <parameter name="url" value="http://example.com"/>
+    <classes>
+      <class name="com.example.tests.SampleTest"/>
+    </classes>
+  </test>
+</suite>
+
+Accessing Parameters in Java Test Classes:
+Using @Parameters Annotation: In your Java test class, you use the @Parameters annotation to fetch these parameter values. 
+The @Parameters annotation takes the parameter names from the XML file.
+
+Mapping Parameters to Method Arguments: The method in your test class should have the same number of arguments as the parameters specified in the @Parameters annotation, and they should be in the same order.
+
+Example:
+
+public class SampleTest {
+  @Test
+  @Parameters({"browser", "url"})
+  public void testMethod(String browser, String url) {
+    // Your test code using 'browser' and 'url'
+  }
+}
+Advantages of Using Parameters in TestNG:
+Flexibility: Parameters allow you to run the same test with different data sets without changing the test code itself.
+Data-Driven Testing: They facilitate data-driven testing by providing an easy way to inject test data.
+Maintainability: Parameters enhance maintainability by separating test logic from test data.
+
+Considerations:
+Data Type: By default, all parameters are passed as String. If you need another data type, you should convert it within your test method.
+Parameter Scope: Be mindful of where you define your parameters (suite, test, or class level) as this determines their scope and applicability.
+Parameters in TestNG offer a robust way to create more dynamic and data-driven tests, allowing for a wider coverage and more efficient testing processes.

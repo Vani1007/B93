@@ -1,64 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
-    <line>
-      <![CDATA[Create User:UserA]]>
-    </line>
-    <line>
-      <![CDATA[Create User:1234]]>
-    </line>
-    <line>
-      <![CDATA[Create User:true]]>
-    </line>
   </reporter-output>
-  <suite started-at="2024-01-02T09:02:24 IST" name="Default suite" finished-at="2024-01-02T09:02:25 IST" duration-ms="176">
+  <suite started-at="2024-01-03T08:58:00 IST" name="Suite" finished-at="2024-01-03T08:58:37 IST" duration-ms="36401">
     <groups>
     </groups>
-    <test started-at="2024-01-02T09:02:24 IST" name="Default test" finished-at="2024-01-02T09:02:25 IST" duration-ms="176">
-      <class name="day21.Demo10">
-        <test-method signature="createUser(java.lang.Object)[pri:0, instance:day21.Demo10@6892b3b6]" started-at="2024-01-02T09:02:25 IST" name="createUser" data-provider="getData" finished-at="2024-01-02T09:02:25 IST" duration-ms="19" status="PASS">
+    <test started-at="2024-01-03T08:58:00 IST" name="TestEdge" finished-at="2024-01-03T08:58:36 IST" duration-ms="36026">
+      <class name="day22.Demo9">
+        <test-method signature="test9(java.lang.String)[pri:0, instance:day22.Demo9@5f049ea1]" started-at="2024-01-03T08:58:00 IST" name="test9" finished-at="2024-01-03T08:58:36 IST" duration-ms="35896" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[UserA]]>
+                <![CDATA[edge]]>
               </value>
             </param>
           </params>
           <reporter-output>
-            <line>
-              <![CDATA[Create User:UserA]]>
-            </line>
           </reporter-output>
-        </test-method> <!-- createUser -->
-        <test-method signature="createUser(java.lang.Object)[pri:0, instance:day21.Demo10@6892b3b6]" started-at="2024-01-02T09:02:25 IST" name="createUser" data-provider="getData" finished-at="2024-01-02T09:02:25 IST" duration-ms="3" status="PASS">
+        </test-method> <!-- test9 -->
+      </class> <!-- day22.Demo9 -->
+    </test> <!-- TestEdge -->
+    <test started-at="2024-01-03T08:58:00 IST" name="TestChrome" finished-at="2024-01-03T08:58:37 IST" duration-ms="36401">
+      <class name="day22.Demo9">
+        <test-method signature="test9(java.lang.String)[pri:0, instance:day22.Demo9@1e6a3214]" started-at="2024-01-03T08:58:00 IST" name="test9" finished-at="2024-01-03T08:58:37 IST" duration-ms="36280" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[1234]]>
+                <![CDATA[chrome]]>
               </value>
             </param>
           </params>
           <reporter-output>
-            <line>
-              <![CDATA[Create User:1234]]>
-            </line>
           </reporter-output>
-        </test-method> <!-- createUser -->
-        <test-method signature="createUser(java.lang.Object)[pri:0, instance:day21.Demo10@6892b3b6]" started-at="2024-01-02T09:02:25 IST" name="createUser" data-provider="getData" finished-at="2024-01-02T09:02:25 IST" duration-ms="2" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-            <line>
-              <![CDATA[Create User:true]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- createUser -->
-      </class> <!-- day21.Demo10 -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- test9 -->
+      </class> <!-- day22.Demo9 -->
+    </test> <!-- TestChrome -->
+  </suite> <!-- Suite -->
 </testng-results>
