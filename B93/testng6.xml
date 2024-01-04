@@ -2,13 +2,13 @@
   <test name="TestChrome">
   <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="day22.Demo9"/>
+      <class name="day23.Demo3"/>
     </classes>
   </test>
   <test name="TestEdge">
-  <parameter name="browser" value="edge"/>
+  <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="day22.Demo9"/>
+      <class name="day23.Demo3"/>
     </classes>
   </test>
 </suite>
