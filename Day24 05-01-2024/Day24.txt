@@ -1,0 +1,110 @@
+TestNG has 2 imp class Assert and SoftAssert , which are used for validation in tests:
+
+Assert (Hard Assert) in TestNG:
+
+Purpose: Used for validating conditions in the test. If the assert condition fails, TestNG marks the test as failed and terminates the execution of the test method.
+
+Usage: Commonly used when the test should not proceed further if the check fails. For example, if a login test fails to log in, there's no point in executing further steps.
+
+Methods: Includes various static methods like assertEquals, assertTrue, assertFalse, assertNotNull, etc., each designed for specific types of checks.
+
+Behavior: Upon failure, Assert throws an AssertionError, immediately stopping the execution of the current test method.
+
+
+
+SoftAssert in TestNG:
+
+Purpose: Allows multiple assertions to be made within a single test method without stopping the test execution upon failures. It's useful for cases where you want to aggregate all failures before deciding on the test outcome.
+
+
+Usage: Typically used in scenarios where multiple test steps need to be validated independently, and you want to report all failures at the end of the test.
+
+Methods: Similar to Assert, it provides methods like softAssert.assertEquals, softAssert.assertTrue, etc.
+
+Behavior: Unlike Assert, SoftAssert does not throw an exception upon failure. Instead, you need to call the assertAll method at the end of your test method to aggregate and report all failures.
+
+if assert fails it will not execute remaing code of current test method
+
+what is the diff b/w 
+Assert			 & 		SoftAssert
+static methods				non-static methods
+if fails-exit current test		it will not
+we do not use assertAll			we must use assertAll
+-basic & critical feature		others
+
+dependsOnMethods is a feature in TestNG, that allows you to define dependencies between test methods. 
+This feature is particularly useful in managing the execution order of tests, 
+ensuring that certain tests are run only after specified methods have successfully completed. 
+
+Here's an overview of how dependsOnMethods works:
+
+Purpose: The primary purpose of dependsOnMethods is to create a dependency chain among test methods. This ensures that certain tests are executed only after their dependent methods have run successfully.
+
+Usage: It's commonly used in scenarios where a test method depends on the successful execution of one or more methods. For instance, a test method that verifies user profile updates might depend on a successful user login test.
+
+Syntax: In TestNG, you use the dependsOnMethods attribute within the @Test annotation to specify the dependencies.
+
+Behavior:
+
+If a test method that another test depends on fails, TestNG will skip the dependent test.
+The dependent test will not be marked as failed; instead, it's marked as skipped.
+TestNG ensures that the dependent methods are run in the declared order.
+
+Advantages:
+
+Helps in maintaining test execution order.
+Useful for handling test scenarios that have a prerequisite.
+Enhances the logical grouping and readability of test cases.
+
+Limitations:
+
+Overuse of dependencies can make tests complex and difficult to maintain.
+Dependencies can lead to a false sense of security if tests are not well-designed.
+Skipped tests (due to failed dependencies) might mask issues if not monitored carefully.
+
+---------------------------------------------------------------------------------------------------
+Groups:
+Groups in TestNG allow you to categorize your tests into different sets based on your requirements.
+This feature is especially useful for large test suites, where you want to execute only a subset of tests under specific circumstances. 
+
+Here's an overview of TestNG groups:
+
+Purpose: Groups allow you to categorize your test methods into named groups.
+This categorization helps in selectively running a subset of tests. 
+For example, you can create groups for "smoke tests", "regression tests", "sanity tests", etc.
+
+Defining Groups: You define groups by using the groups attribute in the @Test annotation. A test method can belong to one or more groups.
+
+
+@Test(groups = {"group1", "group2"})
+public void testMethod1() {
+    // Test code
+}
+
+
+Running Specific Groups: In your TestNG XML file or through test runners, 
+you can specify which groups to include or exclude during the test run.
+
+Benefits:
+
+Flexibility: Groups provide the flexibility to run a specific set of test methods without having to comment out or modify the code.
+Organization: Helps in better organizing tests, especially in large projects.
+Customized Test Execution: Facilitates running different sets of tests for different scenarios, like smoke testing, regression testing, etc.
+
+
+Executing Groups:
+In your TestNG XML file:
+
+<test name="RegressionTests">
+    <groups>
+        <run>
+            <include name="regression"/>
+        </run>
+    </groups>
+    <classes>
+        <class name="ExampleTest"/>
+    </classes>
+</test>
+This configuration will run only the tests that are part of the "regression" group.
+
+
