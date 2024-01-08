@@ -1,0 +1,69 @@
+Handling excel file
+Reading and writing Excel files in Java can be efficiently done using the Apache POI library.
+Apache POI provides support for both old Excel format (.xls) and new Excel format (.xlsx). 
+
+1. Adding Apache POI to Your Project
+First, you need to add the Apache POI library to your project. If you are using Maven, add the following dependencies in your pom.xml:
+
+
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi</artifactId>
+    <version>5.2.2</version> <!-- Use the latest version -->
+</dependency>
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>5.2.2</version> <!-- Use the latest version -->
+</dependency>
+
+2. Reading an Excel File
+To read an Excel file, you need to first create a FileInputStream to read the Excel file into memory, and then use POI's Workbook, Sheet, Row, and Cell interfaces.
+
+import org.apache.poi.ss.usermodel.*;
+import java.io.File;
+import java.io.FileInputStream;
+
+public class ExcelReader {
+    public static void main(String[] args) throws Exception {
+        FileInputStream file = new FileInputStream(new File("path/to/your/excel/file.xlsx"));
+
+        Workbook workbook = WorkbookFactory.create(file);
+        Sheet sheet = workbook.getSheetAt(0);
+
+        for (Row row : sheet) {
+            for (Cell cell : row) {
+                // Process the cell
+            }
+        }
+
+        workbook.close();
+    }
+}
+
+3. Writing to an Excel File
+For writing to an Excel file, you’ll create a Workbook instance, add Sheets, Rows, and Cells with content, and finally write this to a file output stream.
+
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class ExcelWriter {
+    public static void main(String[] args) throws IOException {
+        Workbook workbook = new XSSFWorkbook();
+        Sheet sheet = workbook.createSheet("Example sheet");
+
+        Row row = sheet.createRow(0);
+        Cell cell = row.createCell(0);
+        cell.setCellValue("Data");
+
+        FileOutputStream fileOut = new FileOutputStream("path/to/your/excel/file.xlsx");
+        workbook.write(fileOut);
+        fileOut.close();
+        workbook.close();
+    }
+}
+4. Error Handling and Resources Management
+Make sure to properly handle exceptions and close resources to prevent memory leaks.
