@@ -1,0 +1,54 @@
+AFW
+
+1. create a workspace
+2. create a Maven Project 
+    groupid:akshara
+    artificat id: pos-afw
+3. add dependencies
+       selenium
+       testng
+       poi
+4. add pulgins
+       maven compiler
+       sure fire plugin--> to execute testng.xml from pom.xml
+
+How to upload AFW from eclipse to github
+1. by architect
+2. 1 time
+3. once AFW design is completed
+
+-------------------follow this steps-----------------------------------------------
+create a maven project and write one demo.java
+
+precondition: We should have gitrepo + credentials
+1. goto github.com and login
+2. create a repository--> click new , specify the name, click create repository
+3. copy the repository URL---> URI   example (https://github.com/AksharaBhanu/pos-afw.git)
+	userName:AksharaBhanu
+	password: token 
+
+How to generate token
+1. click on profile
+2. click settings
+3. click Developer settings
+4. click Personal access tokens
+5. click Tokens(classic)
+6. click 'Generate new token'
+7. click 'Generate new token (classsic)'
+8. specify the note, select all check boxes
+9. click Generate token
+10. copy the token and paste it into a notepad
+   ex: ghp_LHRGkkH7UTxaN7zIgwCWcTCAADHxxx0z5abc
+
+
+
+steps to upload project from eclipse to github
+1. right click on the proect->team->share project
+2. select the checkbox, select the projectname,click create repository,finish
+3. right click on the proect->team->commit
+4. click add all (++), specify commit msg, click commit & push
+5. specify URI , username and token click preview, again click preview , click push
+6. click close
+
+
+
