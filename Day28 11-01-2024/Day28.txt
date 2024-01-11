@@ -1,0 +1,93 @@
+pom.xml
+1. update the jar file
+2. compile the code
+3. execute testng.xml
+4. testng.xml, created parameters and excutes the script
+5. script--> BeforeMethod 
+6. BeforeMethod--> open the browser in Local or remote
+			maximize, enter url, set ITO & ETO
+7. Test Method--> as per the test case
+8. After Method--> takescreenshot if test is failed
+		close the browser
+
+
+Rules to develop a method
+1. by default method should be static
+2. make it non-static only if it is accessing any non-static member of the class
+3. Do not throw any exception, use try-catch block
+4. print stack trace
+4. do not hardcode any input, use paramter/arg
+5. return the value
+
+AFW desing
+-------------------------------------------------------
+AFW implementaion
+1. use the AFW , convert manual test case into automation script
+which test case u automate?
+Regression
+
+Are u going to automate -ve test cases?
+yes if it is part of Regression
+
+Are u going to automate Integration test cases?
+yes if it is part of Regression
+
+How do u know which TC is regression?
+Manual Testing team should inform which TC is regression
+
+Note: MT Team will share regression suite
+
+Which TC you automte 1st?
+Smoke/Sanity Test Case --> Dry run in automation
+
+Sample Test Case
+Test Case Name: Valid Login
+precondition:Login Page (https://pos.aksharatraining.in/pos/public/)
+
+How do u decide priority?
+based on execution order of MTC 
+
+Steps
+1. enter valid username:
+2. enter valid password
+3. click go button
+4. verify that home page is displayed
+------------------------------------------------------------
+How to automate?
+1. execute the TC manually (system study)
+2. while executing the test case note down
+   a. page
+   b. element
+   c. action
+   d. data
+ex:
+page	element		action		data
+Login	username	enter		admin
+Login	password	enter		pointofsale
+Login	go		click		NA
+HomePage logout		verify exists    
+
+3. for every page create respective POM Class 
+  Note:
+       a. create POM class under 'page' package
+       b. name should end with Page
+       c. declare using @FindBy
+       d. initialize it in constructor PF.int...
+       e. utilzation getter/setter
+
+  
+4. create TestNG class
+     a. cerate a class under script package
+     b. Class Name should be same as respective TestCase Name or id
+     c. every test class should extend BaseTest
+     d. create a test method with respective priority (method name starts with 'test')
+     e. specify manual test case steps as inline comment
+     f. below each commnet call respective POM class method
+
+     
+
+
+
+
+
+
