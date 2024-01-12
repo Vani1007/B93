@@ -1,0 +1,115 @@
+How to automate?
+1. execute the TC manually (system study)
+2. while executing the test case note down
+   a. page
+   b. element
+   c. action
+   d. data
+ex:
+page	element		action		data
+Login	username	enter		admin
+Login	password	enter		pointofsale
+Login	go		click		NA
+HomePage logout		verify exists    
+
+3. for every page create respective POM Class 
+  Note:
+       a. create POM class under 'page' package
+       b. name should end with Page
+       c. declare using @FindBy
+       d. initialize it in constructor PF.int...
+       e. utilzation getter/setter
+
+  
+4. create TestNG class
+     a. cerate a class under script package
+     b. Class Name should be same as respective TestCase Name or id
+     c. every test class should extend BaseTest
+     d. create a test method with respective priority (method name starts with 'test')
+     e. specify manual test case steps as inline comment
+     f. below each commnet call respective POM class method
+     g. at the end use Assert
+
+5. Data Drive the script
+    a. in input.xlsx, create a sheet with the name same as respective testcase name or testcase id
+    b. in that sheet, 1st row should be header  
+    c. test data should be stored in 2nd row 
+    d. in test method read the data using generic method (getExcelData)
+
+
+TestCase2
+TestName: Invalid Login
+precondition:login page
+Steps
+1. enter invalid username
+2. enter invalid password
+3. click on go button
+4. verify that error message is displayed
+
+ 
+  page	element		action		data
+  login  un		enter		abcd
+  login   pw		enter 		xyz
+  login  go		click
+  login  err msg	verify displayed		
+
+-----------------------------------------------------------------------------------------------------------------------
+1. we execute the framework using pom.xml, ie. right click on pom.xml-> maven test
+    a. update the jar file (from Maven Central Repository to Mavel Local Repository)
+    b. compile the source code(using Maven Compiler Plugin)
+    c. execute the testng.xml (using SureFire Plugin)
+2. testng.xml --> 
+    a. create parameter such as grid browser ppt file...
+    b. execute the TestNG class present under script package
+    c. in our AFW , every testng class extends BaseTest (contains BM & AM)
+    d. BaseTest implements IAutoConst interface
+3. it will start the execution of BeforeMethod
+    a.it will open the specified browser (Chrome/Edge) in req system (Local/Remote)
+     driver=new ChromeDriver();
+     driver=new RemoteWebDriver(hub,browserOptions);
+
+    b. maximize the browser
+       driver.manage().window().maximize();
+    
+    c. get the url from specified property file and enter in the browser & launch the app
+       driver.get(url);
+
+    d. set implicit & explicit timeout by taking the value from property file
+       driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(ITO));
+	wait=new WebDriverWait(driver, Duration.ofSeconds(ETO));
+	
+
+4. After executing BeforeMethod, it will goto Test Method
+    a. get the test data from excel sheet (input.xlsx) using getExcelData method of Utility class
+       String un=Utility.getExcelData(XLPATH, "ValidLogin",1,0);
+
+    b. call POM class method based on Test Case Steps
+       LoginPage loginPage=new LoginPage(driver);
+	loginPage.setUserName(un);
+
+    c. POM class method will perfom the action on the application
+       public void setUserName(String un)
+	{
+		unTB.sendKeys(un);
+	}
+
+    d. Assert the result (Pass/Fail)
+	Assert.assertTrue(result);
+
+5. After executing test, it will goto After Method
+   a. check the status of the test
+      if(testResult.getStatus()==2);
+
+   b. take the screenshot if the test is faild
+	TakesScreenshot t=(TakesScreenshot)driver;
+	File srcFile = t.getScreenshotAs(OutputType.FILE);
+
+   c. close the application
+      driver.quit();
+
+6. after executing all the scripts, testng will generate emailable-reports under target/surefire-reports
+
+
+
+
+
