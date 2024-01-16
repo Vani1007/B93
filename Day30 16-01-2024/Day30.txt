@@ -1,0 +1,94 @@
+When do we execute the framework?
+when we get new build
+
+--> We need to execute the framework automaticallly whenever we get new build
+
+what is a build?
+compiled and compressed copy of the software 
+
+When do we get a new build?
+in our company we get wed at 4pm
+
+Why new build?
+new feature
+modified existing feature
+remove old feature
+defect fixes...
+
+to execute the AFW we integrate our framework with build servers 
+ex: jenkins 
+
+are u going to install jenkins?
+no
+
+are u going to configure?
+no devops
+
+
+pre condition
+1. jenkins is installed & configured
+2. we know its url , un & pwd
+3. know github url and its un & token
+
+steps
+1. login to jenkins (web application)
+2. click new item
+3. specify the name
+4. click on maven project & click ok
+5. gotot source code management & select git
+6. specify the URI and credentials
+7. click save
+
+How to excute?
+ 3ways
+1. manually - i want execute AFW now?
+   a. login to jenkins
+   b. goto the project: pos-afw 
+   c. click build now (execute now)
+      a. download AFW from github to jenkins server
+      b . download all the req jar fils
+      c. compile the code
+      d. run the test suite
+  when we click build now, we get a link under build history
+   click it and then goto console output to see the details
+
+2. schedule: ex run at 9am every day
+   a.login to jenkins
+   b. goto project
+   c. click configure
+   d. goto build triggers
+   e. select build periodically
+   f. specify the date & time using below format
+      MINUTE HOUR DOM    MONTH DOW
+      0-59   0-23  1-31  1-12   0/7 sunday  1-monday 2 tue
+       15    8   16  1 2 ---> 
+       jan 16th tuesday at 8 15AM
+
+      0  18 * * * --every day 6pm
+   g. click save
+
+3. After Dev build creation
+   a. login to jenkins
+   b. open the fw project (pos-afw)
+   c. click configure
+   d. click build triggers
+   e. select 'Build after other projects are built'
+   f. specify the 'Dev build name' under Projects to watch
+   g. ensure that 'Trigger only if build is stable' is selected
+   h. click save
+
+
+ what next
+1. mock interview- 3mock interview
+2. CV 
+3. API class 
+4. sharing code, sample CV videos 
+9481787493
+
+
+
+
+
+
+
+
